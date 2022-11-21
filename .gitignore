@@ -1,2 +1,15 @@
 /error_log
 /access_log
+*.DS_Store
+.idea
+.editorconfig
+/web/sites/default/files/
+/web/core/
+/web/modules/contrib/
+/web/sites/default/settings.local.php
+/db_backups/
+/vendor/
+web/.csslintrc
+web/.eslintignore
+web/.csslintrc.json
+web/.eslintrc.json
