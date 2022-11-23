@@ -1,0 +1,22 @@
+uuid: 148ebd7e-57d0-4643-a8c0-ca62cd135ef5
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+_core:
+  default_config_hash: 0k5lt5gT65ll_HmaL9wW4ohXsqza2zrr91qukxDCmFI
+id: node.field_amount_of_vegetarians
+field_name: field_amount_of_vegetarians
+entity_type: node
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

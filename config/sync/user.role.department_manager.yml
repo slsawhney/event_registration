@@ -1,0 +1,14 @@
+uuid: c9651350-fa83-4f2a-b6e2-6b836776351e
+langcode: en
+status: true
+dependencies:
+  module:
+    - event_registration
+_core:
+  default_config_hash: MTXhGfkNnL0PCAk2sd1OoFe96M1blfCieQjdVD-ApMo
+id: department_manager
+label: 'Department manager'
+weight: 4
+is_admin: null
+permissions:
+  - manage_event_registration

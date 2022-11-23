@@ -1,0 +1,32 @@
+uuid: ec69e53d-0776-41aa-a677-bf88653b1a38
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.event_registration.field_amount_of_kids
+    - field.field.node.event_registration.field_amount_of_vegetarians
+    - field.field.node.event_registration.field_department
+    - field.field.node.event_registration.field_email_address
+    - field.field.node.event_registration.field_one_plus
+    - node.type.event_registration
+  module:
+    - user
+_core:
+  default_config_hash: lcLvhyvB9pYlg2ivFfQf5rziYKpBxG4N6dTQpqHJG_I
+id: node.event_registration.teaser
+targetEntityType: node
+bundle: event_registration
+mode: teaser
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_amount_of_kids: true
+  field_amount_of_vegetarians: true
+  field_department: true
+  field_email_address: true
+  field_one_plus: true

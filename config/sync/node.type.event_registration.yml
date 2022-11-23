@@ -1,0 +1,19 @@
+uuid: 835675cc-da87-44e2-9b3f-5ab31dbefbac
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+_core:
+  default_config_hash: eAPImOByI9UkSJv_LMqIWYU93IYOlYSU3jotKBVnfUU
+name: 'Event Registration'
+type: event_registration
+description: 'Event Registration form for Employee'
+help: ''
+new_revision: false
+preview_mode: 1
+display_submitted: true

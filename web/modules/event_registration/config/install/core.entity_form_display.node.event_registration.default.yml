@@ -1,0 +1,60 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.event_registration.field_amount_of_kids
+    - field.field.node.event_registration.field_amount_of_vegetarians
+    - field.field.node.event_registration.field_department
+    - field.field.node.event_registration.field_email_address
+    - field.field.node.event_registration.field_one_plus
+    - node.type.event_registration
+  module:
+    - path
+id: node.event_registration.default
+targetEntityType: node
+bundle: event_registration
+mode: default
+content:
+  field_amount_of_kids:
+    type: number
+    weight: 2
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_amount_of_vegetarians:
+    type: number
+    weight: 3
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_department:
+    type: options_select
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_email_address:
+    type: email_default
+    weight: 1
+    region: content
+    settings:
+      placeholder: ''
+      size: 60
+    third_party_settings: {  }
+  field_one_plus:
+    type: options_buttons
+    weight: 4
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: -1
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden: {  }

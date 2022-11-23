@@ -1,0 +1,7 @@
+event_registration.url:
+  path: '/registration/{department}'
+  defaults:
+    _controller: '\Drupal\event_registration\Controller\EventRegistrationController::registration'
+    _title: 'Event Registration'
+  requirements:
+    _permission: 'access content'

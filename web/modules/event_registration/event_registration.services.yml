@@ -1,0 +1,3 @@
+services:
+  event_registration.service:
+    class: Drupal\event_registration\EventRegistrationService

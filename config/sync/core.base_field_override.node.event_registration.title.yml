@@ -1,0 +1,20 @@
+uuid: 94f594f5-2ded-40c8-b026-81a614a4ae42
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.event_registration
+_core:
+  default_config_hash: Zbe3cXLBTSKVU7gZmMMiGJLAfqLZpto97Z05Lp5WgQ0
+id: node.event_registration.title
+field_name: title
+entity_type: node
+bundle: event_registration
+label: 'Employee Name'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,23 @@
+uuid: 34aa257c-b410-42a9-a6aa-5ded8a7c45c0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_one_plus
+    - node.type.event_registration
+  module:
+    - options
+_core:
+  default_config_hash: dkYqVepW5qWFo5KYMEcCac2_w4sTxI18ugsaooMIfx4
+id: node.event_registration.field_one_plus
+field_name: field_one_plus
+entity_type: node
+bundle: event_registration
+label: 'One Plus'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

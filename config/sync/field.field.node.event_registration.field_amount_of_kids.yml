@@ -1,0 +1,25 @@
+uuid: 6ae41298-40fe-4ee0-9c12-c3a19e14155b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_amount_of_kids
+    - node.type.event_registration
+_core:
+  default_config_hash: yPkF6GEjMtdmK1HyR99IcxkVdk-PU-PzKf6fb4KLy-Q
+id: node.event_registration.field_amount_of_kids
+field_name: field_amount_of_kids
+entity_type: node
+bundle: event_registration
+label: 'Amount of Kids'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: 0
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

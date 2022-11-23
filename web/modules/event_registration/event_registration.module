@@ -1,0 +1,85 @@
+<?php
+
+use Drupal\Core\Form\FormStateInterface;
+
+/**
+ * Implements hook_form_alter().
+ */
+function event_registration_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+
+  // Add a new validation function.
+  if ('node_event_registration_form' == $form_id) {
+    $department = \Drupal::routeMatch()->getParameter('department');
+
+    $fieldDefinition = \Drupal::service('entity_field.manager')
+      ->getFieldDefinitions('node', 'event_registration');
+    $definition = $fieldDefinition['field_department'];
+    $settings = $definition->getSettings();
+    $allowed_values = $settings['allowed_values'];
+
+    $allowedOptions = [];
+    foreach ($allowed_values as $key => $allowed_value) {
+      $allowedOptions[] = $key;
+    }
+
+    if (!in_array($department, $allowedOptions)) {
+      \Drupal::messenger()->addError( t('The Department %department is not a valid department.', ['%department' => $department]));
+    }
+
+    $form['field_department']['widget']['#disabled'] = TRUE;
+    $form['#validate'][] = 'event_registration_form_validate';
+  }
+}
+
+function event_registration_form_validate($form, FormStateInterface $form_state) {
+
+  $total_number_of_members = 1;
+
+  $isOnePlus = $form_state->getValue('field_one_plus')[0]['value'];
+  if ('yes' == $isOnePlus) {
+    $total_number_of_members = $total_number_of_members + 1;
+  }
+
+  $number_of_kids = $form_state->getValue('field_amount_of_kids')[0]['value'];
+  if ($number_of_kids) {
+    $total_number_of_members = $number_of_kids + $total_number_of_members;
+  }
+
+  $number_of_vegetarians = $form_state->getValue('field_amount_of_vegetarians')[0]['value'];
+  if ($number_of_vegetarians > $total_number_of_members) {
+    $form_state->setErrorByName('field_amount_of_vegetarians', t('Number of Vegetarians cannot be higher than the total amount of people'));
+  }
+
+  $email_used = $form_state->getValue('field_email_address')[0]['value'];
+  if (!\Drupal::service('email.validator')->isValid($email_used)) {
+    $form_state->setErrorByName('field_email_address', t('The email address %mail is not valid.', ['%mail' => $email_used]));
+  }
+
+  $nodeQuery = \Drupal::entityTypeManager()->getStorage('node')->getQuery();
+  $nodeQuery->condition('type', 'event_registration')
+    ->condition('field_email_address', $email_used)
+    ->condition('status', '1');
+
+  if ($nodeQuery->count()->execute()) {
+    $form_state->setErrorByName('field_email_address', t('The email address %mail is already registered.', ['%mail' => $email_used]));
+  }
+
+  if(empty($form_state->getValue('field_department'))) {
+    $form_state->setErrorByName('field_department', t('The Department in URL is not a valid department.'));
+  }
+
+}
+
+
+/**
+ * Implements hook_theme().
+ */
+function event_registration_theme() {
+  return [
+    'event_registration_count' => [
+      'variables' => [
+        'data' => [],
+      ],
+    ],
+  ];
+}

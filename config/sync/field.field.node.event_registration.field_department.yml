@@ -1,0 +1,23 @@
+uuid: b45ca604-5263-4990-8117-f9ba9d00db4d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_department
+    - node.type.event_registration
+  module:
+    - options
+_core:
+  default_config_hash: u9UoD3Z271M5J2kR9RftY7i0Qw_NoQNg5ovajsEaGCQ
+id: node.event_registration.field_department
+field_name: field_department
+entity_type: node
+bundle: event_registration
+label: Department
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

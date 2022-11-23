@@ -1,0 +1,30 @@
+uuid: 3822158d-fbbf-4fc5-a1a6-3da65afe8cf7
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_department
+field_name: field_department
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: finance
+      label: Finance
+    -
+      value: it
+      label: IT
+    -
+      value: consulting
+      label: Consulting
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
